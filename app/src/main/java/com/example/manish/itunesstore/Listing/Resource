@@ -1,0 +1,67 @@
+import com.squareup.moshi.Json
+import java.net.URI
+import java.util.*
+
+interface IResource {
+    val artistID: Int
+    val artistName: String
+    val artistViewUrl: URI
+    val artwork100Url: URI
+    val artwork30Url: URI
+    val artwork60Url: URI
+    val collectionCencoredName: String
+    val collectionExplicitness: String // enum
+    val collectionID: Int
+    val collectionName: String
+    val collectionPrice: Double
+    val collectionViewURL: URI
+    val country: String // enum
+    val currency: String
+    val discCount: Int
+    val discNumber: Int
+    val isStreamable: Boolean
+    val kind: String    // enum
+    val previewUrl: URI     // optional
+    val primaryGenreName: String //enum
+    val releaseDate: Date
+    val trackCensorName: String
+    val trackCount: Int
+    val trackExplicitness: String // enum
+    val trackID: Int
+    val trackName: String
+    val trackPrice: Double
+    val trackTimeMillis: Int
+    val trackViewUrl: URI
+    val wrapperType: String /// enum
+}
+
+data class Resource(override @Json(name: "artistId") val artistID: Int,
+                    override val artistName: String,
+                    override val artistViewUrl: URI,
+                    override val artwork100Url: URI,
+                    override val artwork30Url: URI,
+                    override val artwork60Url: URI,
+                    override val collectionCencoredName: String,
+                    override val collectionExplicitness: String, // enum
+                    override val collectionID: Int,
+                    override val collectionName: String,
+                    override val collectionPrice: Double,
+                    override val collectionViewURL: URI,
+                    override val country: String, // enum
+                    override val currency: String,
+                    override val discCount: Int,
+                    override val discNumber: Int,
+                    override val isStreamable: Boolean,
+                    override val kind: String,    // enum
+                    override val previewUrl: URI,     // optional
+                    override val primaryGenreName: String, //enum
+                    override val releaseDate: Date,
+                    override val trackCensorName: String,
+                    override val trackCount: Int,
+                    override val trackExplicitness: String, // enum
+                    override val trackID: Int,
+                    override val trackName: String,
+                    override val trackPrice: Double,
+                    override val trackTimeMillis: Int,
+                    override val trackViewUrl: URI,
+                    override val wrapperType: String): IResource
